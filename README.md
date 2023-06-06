@@ -1,11 +1,11 @@
-## Face2Face<sup>&rho;</sup>: Official Pytorch Implementation
+## Face2Face<sup>&rho;</sup>: Official Pytorch Implementation / @xvdp mod to work with pytorch >= 2.0
 [<img src='https://img.shields.io/badge/paper-ECCV-black'>](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730055.pdf)
 
 ### Environment
-- CUDA 10.2 or above
-- Python 3.8.5
-- ``pip install -r requirements.txt`` 
-  - For visdom, some dependencies may need to be manually 
+- CUDA 10.2 or above (@xvdp works with 11.8)
+- Python 3.8.5 (@xvdp 3.9.15)
+- ``pip install -r requirements.txt`` (@xvdp removed freezepoints)
+- For visdom, some dependencies may need to be manually 
     downloaded ([visdom issue](https://github.com/fossasia/visdom/issues/111))
     
 ### Training data
