@@ -26,20 +26,15 @@ def read_target(file_name, output_size):
 
 
 def load_coeffs(input_file_name):
-    file = open(input_file_name, "r")
-    coeffs = [float(line) for line in file]
-    file.close()
+    with open(input_file_name, "r") as _fi:
+        coeffs = [float(line) for line in _fi.read().split()]
     return coeffs
 
 
 def load_landmarks(file_name):
-    landmarks = []
-    file = open(file_name, 'r')
-    for line in file:
-        s1 = line.split(' ')
-        landmarks.append([float(s1[0]), float(s1[1])])
-    file.close()
-    return landmarks
+    with open(file_name, "r") as _fi:
+        txt = _fi.read()
+    return [[float(z) for z in t.split()] for t in txt.split('\n') if t]
 
 
 def mkdir(path):
