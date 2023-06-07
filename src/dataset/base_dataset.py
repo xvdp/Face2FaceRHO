@@ -1,8 +1,7 @@
+import torch
 import torch.utils.data as data
 from PIL import Image
 import torchvision.transforms as transforms
-import torch
-
 
 class BaseDataset(data.Dataset):
     def __init__(self):

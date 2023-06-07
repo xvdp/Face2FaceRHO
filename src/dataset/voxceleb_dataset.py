@@ -1,8 +1,8 @@
 import os.path
 import torch
 import numpy as np
-from dataset.base_dataset import BaseDataset
-from util.util import (
+from .base_dataset import BaseDataset
+from ..util.util import (
     make_ids,
     read_target,
     load_coeffs,

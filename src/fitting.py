@@ -1,9 +1,9 @@
 import argparse
-import torch
 import json
 import os
 import copy
-import numpy as np
+import torch
+
 from external.decalib.utils.config import cfg as deca_cfg
 from external.decalib.deca import DECA
 from external.decalib.datasets import datasets
@@ -46,13 +46,14 @@ def _check_args(args):
 
 
 class FLAMEFitting:
-    def __init__(self):
-        self.deca = DECA(config=deca_cfg, device=args.device)
+    def __init__(self, device):
+        self.deca = DECA(config=deca_cfg, device=device)
+        self.device=device
 
     def fitting(self, img_name):
         testdata = datasets.TestData(img_name, iscrop=True,face_detector='fan', sample_step=10)
         input_data = testdata[0]
-        images = input_data['image'].to(args.device)[None, ...]
+        images = input_data['image'].to(self.device)[None, ...]
         with torch.no_grad():
             codedict = self.deca.encode(images)
             codedict['tform'] = input_data['tform'][None, ...]
@@ -129,7 +130,7 @@ if __name__ == '__main__':
     args = parse_args()
 
     # 3DMM fitting by DECA: Detailed Expression Capture and Animation using FLAME model
-    face_fitting = FLAMEFitting()
+    face_fitting = FLAMEFitting(device=args.device)
     src_params = face_fitting.fitting(args.src_img)
     drv_params = face_fitting.fitting(args.drv_img)
 

@@ -1,17 +1,17 @@
 import argparse
-from options.parse_config import Face2FaceRHOConfigParse
-from models import create_model
 import os
 import torch
 import numpy as np
+import cv2
+from options.parse_config import Face2FaceRHOConfigParse
+from models import create_model
 from util.landmark_image_generation import LandmarkImageGeneration
 from util.util import (
     read_target,
     load_coeffs,
-    load_landmarks
+    load_landmarks,
+    tensor2im
 )
-import cv2
-from util.util import tensor2im
 
 
 def parse_args():

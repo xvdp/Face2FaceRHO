@@ -1,7 +1,7 @@
 import importlib
 import torch.utils.data
-from dataset.base_data_loader import BaseDataLoader
-from dataset.base_dataset import BaseDataset
+from .base_data_loader import BaseDataLoader
+from .base_dataset import BaseDataset
 
 
 def find_dataset_using_name(dataset_name):

@@ -1,10 +1,10 @@
 import argparse
-import time
-from options.parse_config import Face2FaceRHOConfigParse
-from dataset import CreateDataLoader
-from models import create_model
-from util.visualizer import Visualizer
 import os
+import time
+from .options.parse_config import Face2FaceRHOConfigParse
+from .dataset import CreateDataLoader
+from .models import create_model
+from .util.visualizer import Visualizer
 
 
 def parse_args():

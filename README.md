@@ -1,6 +1,12 @@
 ## Face2Face<sup>&rho;</sup>: Official Pytorch Implementation / @xvdp mod to work with pytorch >= 2.0
 [<img src='https://img.shields.io/badge/paper-ECCV-black'>](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730055.pdf)
 
+### @xvdp
+* added combined fitting and reenact `src/script.py`
+```python src/scripts.py --src_img <imgpath0> --drv_img <imgpath1> --out_dir <folder> -out_name <newname>```
+* added bash script 
+* Project is not built as a module but to be run from python scripts. TODO: modify
+
 ### Environment
 - CUDA 10.2 or above (@xvdp works with 11.8)
 - Python 3.8.5 (@xvdp 3.9.15)

@@ -1,5 +1,5 @@
 import importlib
-from models.base_model import BaseModel
+from .base_model import BaseModel
 
 
 def find_model_using_name(model_name):
@@ -10,7 +10,7 @@ def find_model_using_name(model_name):
     modellib = importlib.import_module(model_filename)
 
     # In the file, the class called ModelNameModel() will
-    # be instantiated. It has to be a subclass of BaseModel,
+    # be instantiated. It has to be a sbclass of BaseModel,
     # and it is case-insensitive.
     model = None
     target_model_name = model_name.replace('_', '') + 'model'
